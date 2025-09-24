@@ -1,0 +1,1 @@
+# seniorplace-api-samples
