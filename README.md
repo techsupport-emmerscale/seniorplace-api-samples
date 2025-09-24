@@ -1,8 +1,10 @@
 # Senior Place API Samples
 
-![Senior Place Logo](https://seniorplace-public.s3.us-west-2.amazonaws.com/docs/padded-logo.png)
+<img src="https://seniorplace-public.s3.us-west-2.amazonaws.com/docs/padded-logo.png" alt="Senior Place Logo" width="200">
 
 This repository contains sample scripts and examples for working with the Senior Place API.
+
+**Visit [seniorplace.com](https://seniorplace.com) to learn more about our platform.**
 
 ## About Senior Place
 
