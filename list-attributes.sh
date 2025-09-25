@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Test script for Custom Questions API endpoint
-# Usage: API_KEY=your_key_here ./test-custom-questions.sh [BASE_URL]
+# List client attributes
+# Usage: API_KEY=your_key_here ./list-attributes.sh [BASE_URL]
 
 set -e
 

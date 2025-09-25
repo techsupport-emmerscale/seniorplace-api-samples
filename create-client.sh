@@ -62,6 +62,10 @@ JSON_DATA=$(jq -n \
     (if $referralOrganizationId != "" then {referralOrganizationId: $referralOrganizationId} else {} end) +
     (if ($contacts | length) > 0 then {contacts: $contacts} else {} end)')
 
+# Pretty-print the request payload to stderr for debugging
+echo "Request payload:" >&2
+echo "$JSON_DATA" | jq '.' >&2
+
 # Make the API request and show result
 curl -s -H "Authorization: ApiKey $API_KEY" \
     -H "Content-Type: application/json" \
