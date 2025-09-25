@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Get available client statuses from your Senior Place tenant
-# Usage: API_KEY=your_key_here ./get-client-statuses.sh [BASE_URL]
+# Test script for Referral Contacts API endpoint
+# Usage: API_KEY=your_key_here ./test-referral-contacts.sh [BASE_URL]
 
 set -e
 
@@ -17,4 +17,4 @@ fi
 
 curl -H "Authorization: ApiKey $API_KEY" \
     -H "Content-Type: application/json" \
-    "$BASE_URL/api/v1/client-statuses"
+    "$BASE_URL/api/v1/referral-contacts"

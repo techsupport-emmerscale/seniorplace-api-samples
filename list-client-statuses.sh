@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Get custom questions configured for your Senior Place tenant
-# Usage: API_KEY=your_key_here ./get-custom-questions.sh [BASE_URL]
+# Test script for Client Statuses API endpoint
+# Usage: API_KEY=your_key_here ./test-client-statuses.sh [BASE_URL]
 
 set -e
 
 # Configuration
-BASE_URL="${1:-https://staging.seniorplace.com}"
+BASE_URL="${1:-http://localhost:3000}"
 API_KEY="${API_KEY:-}"
 
 if [ -z "$API_KEY" ]; then
@@ -17,4 +17,4 @@ fi
 
 curl -H "Authorization: ApiKey $API_KEY" \
     -H "Content-Type: application/json" \
-    "$BASE_URL/api/v1/client/custom-questions"
+    "https://staging.seniorplace.com/api/v1/client-statuses"
