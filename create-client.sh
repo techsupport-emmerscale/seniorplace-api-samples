@@ -33,6 +33,7 @@ STATUS_ID=$(echo "$CLIENT_STATUSES" | jq -r '[.[] | select(.isArchived != true)]
 # Get client name
 read -p "Client name: " CLIENT_NAME
 read -p "Best contact name (optional): " BEST_CONTACT_NAME
+read -p "Email address: " EMAIL_ADDRESS
 
 # Build contacts array
 CONTACTS="[]"
@@ -47,6 +48,7 @@ JSON_DATA=$(jq -n \
     --arg assignedUserId "$ASSIGNED_USER_ID" \
     --arg referralContactId "$REFERRAL_CONTACT_ID" \
     --arg referralOrganizationId "$REFERRAL_ORG_ID" \
+    --arg email "$EMAIL_ADDRESS" \
     --argjson contacts "$CONTACTS" \
     '{
         statusId: $statusId,
@@ -57,6 +59,7 @@ JSON_DATA=$(jq -n \
             {key: "Question_Hobbies", value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"}
         ]
     } +
+    (if $email != "" then {email: $email} else {} end) +
     (if $assignedUserId != "" then {assignedUserId: $assignedUserId} else {} end) +
     (if $referralContactId != "" then {referralContactId: $referralContactId} else {} end) +
     (if $referralOrganizationId != "" then {referralOrganizationId: $referralOrganizationId} else {} end) +

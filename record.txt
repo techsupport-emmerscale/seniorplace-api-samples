@@ -1,0 +1,40 @@
+Create Record output:
+{
+  "statusId": "1573a291-dc9c-4177-be6a-a9843cf1eab0",
+  "name": "Test - Nathan",
+  "customFields": [
+    {
+      "key": "Question_CommunityTypes",
+      "value": [
+        "Option_MemoryCare"
+      ]
+    },
+    {
+      "key": "Question_Activities",
+      "value": true
+    },
+    {
+      "key": "Question_Hobbies",
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    }
+  ],
+  "assignedUserId": "bba8b43f-7d80-446d-81d4-54578d4f27bf",
+  "contacts": [
+    {
+      "name": "Nathan",
+      "relationship": "Other",
+      "isPrimary": true
+    }
+  ]
+}
+{
+  "id": "69fa10fe-9084-4bf3-b55f-be391db68789",
+  "serial": 1004
+}
+
+
+Referral Org output:
+{"id":"82f31d64-2f49-4cb4-be0a-296a421fdf41"}
+
+Contact test output:
+{"id":"377927c8-deaf-4f2b-b485-bac2de484c37"}
