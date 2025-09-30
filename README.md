@@ -27,8 +27,11 @@ This repository includes ready-to-run scripts that demonstrate how to:
 **Client Management**
 
 - **create-client.sh** - Create a new client in the system
+- **get-client-by-id.sh** - Get a specific client by ID
+- **list-clients.sh** - List all clients with optional filtering
+- **patch-client.sh** - Update an existing client
 - **list-client-statuses.sh** - Fetch available client statuses (new, in progress, moved, etc)
-- **list-attributes.sh** - Retrieve client attributes
+- **list-attributes.sh** - Retrieve client custom questions/attributes
 
 **Referral Management**
 
@@ -62,9 +65,31 @@ export API_KEY="your_api_key_here"
 ./create-client.sh
 ```
 
-After creation, verify the client appears in your [dashboard](https://staging.seniorplace.com).
+After creation, verify the client appears in your [dashboard](https://staging.seniorplace.com). Save the returned `client_id` for the next steps.
 
-**2. Create a Referral Organization**
+**2. Get Client by ID**
+
+```bash
+./get-client-by-id.sh <client_id>
+```
+
+Replace `<client_id>` with the ID from step 1.
+
+**3. List All Clients**
+
+```bash
+./list-clients.sh
+```
+
+**4. Update a Client**
+
+```bash
+./patch-client.sh <client_id>
+```
+
+Replace `<client_id>` with the ID of the client you want to update.
+
+**5. Create a Referral Organization**
 
 ```bash
 ./create-referral-organization.sh
@@ -72,13 +97,13 @@ After creation, verify the client appears in your [dashboard](https://staging.se
 
 Save the returned `organization_id` - you'll need it for the next step.
 
-**3. Create a Referral Contact**
+**6. Create a Referral Contact**
 
 ```bash
 ./create-referral-contact.sh --organization-id <organization_id>
 ```
 
-Replace `<organization_id>` with the ID from step 2.
+Replace `<organization_id>` with the ID from step 5.
 
 ## Support
 
