@@ -21,16 +21,26 @@ if [ -z "$CLIENT_ID" ]; then
     exit 1
 fi
 
-echo "Updating client $CLIENT_ID with sample data..."
-echo ""
+read -p "Client name: " CLIENT_NAME
+read -p "Email: " EMAIL
+read -p "Phone number: " PHONE_NUMBER
+read -p "Montly budget: " BUDGET
+
+JSON_DATA=$(jq -n \
+    --arg name "$CLIENT_NAME" \
+    --arg email "$EMAIL" \
+    --arg phone "$PHONE_NUMBER" \
+    --arg budget "$BUDGET" \
+    '{
+        name: $name,
+        email: $email,
+        phone: $phone,
+        budget: $budget
+    }'
+)
 
 curl -s -H "Authorization: ApiKey $API_KEY" \
     -H "Content-Type: application/json" \
     -X PATCH \
-    -d '{
-        "name": "Updated Client Name",
-        "email": "updated@example.com",
-        "phone": "(555) 999-8888",
-        "monthlyBudget": 5500
-    }' \
+    -d "$JSON_DATA" \
     "$BASE_URL/api/v1/clients/$CLIENT_ID" | jq '.'

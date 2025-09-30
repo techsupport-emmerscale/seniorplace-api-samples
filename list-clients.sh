@@ -23,4 +23,4 @@ fi
 
 curl -H "Authorization: ApiKey $API_KEY" \
     -H "Content-Type: application/json" \
-    "$BASE_URL/api/v1/clients"
+    "$BASE_URL/api/v1/clients" | jq '.'
